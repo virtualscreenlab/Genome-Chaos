@@ -1,0 +1,39 @@
+:::::::::::::::::::::::::::::::::::::::::::
+  ..:: Welcome to PPI-Affinity v 1.0 ::..
+:::::::::::::::::::::::::::::::::::::::::::
+-> The reference structure is: complex.1.pdb (the server adds a string at the end of some names for identification purposes)
+-> The structures will be ranked by the binding affinity values showing the most active first
+-> The Applicability Domain of the models will not be taken into account to filter the final structures
+-> The identifier of the ligand is: C
+
+..:: Binding Affinity predictor module ::..
+
+Calculating the descriptors with ProtDCal...
+Log file has been created.
+Parameters configuration has been loaded correctly.
+
+:::::::::::::::::::::::::::::::::::::::
+  ..:: Welcome to ProtDCal 4.0 ::..
+:::::::::::::::::::::::::::::::::::::::
+
+There are 1 IDL projects.
+The output path is: Outputs
+The input path is: Datasets/Pdb_Protein_Format
+Preparing data to calculations...
+Executing ProtDCal in specific calculation mode...
+The output files were created.
+Loading and executing the IDL file: ppep_project.idl
+1 proteins will be processed....
+The project ppep_project.idl is finished.
+Removing configuration of file ppep_project.idl ...
+ *** Calculations for these configurations concluded correctly ***
+..::Thanks for using ProtDCal::..
+
+Calculating the scores...
+Checking Applicability Domain of the complexes...
+AD98 Model 1 wFLC(IP)_NO_PRT_TI30
+Preparing output files...
+
+ *** Success *** 
+
+=> Job completed <=
