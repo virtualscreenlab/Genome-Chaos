@@ -1,9 +1,9 @@
 # Genome-Chaos
- Gene mutation and translation
+ Gene Mutation and Translation
 
 The BCL2 cDNA sequence (ENST00000398117.1) was retrieved from the COSMIC database. A Python script was utilized to simulate genetic mutations with the following parameters: a mutation rate of 10-4 and 60 cell divisions (Hayflick limit). The gene se-quence was initialized as a list of characters, each representing a specific DNA sequence for the simulation. The apply_mutation function was used to randomly alter bases in the gene sequence according to the mutation rate. For each base, there was a probability of mutation, where the base could change to any nucleotide (A, T, C, or G). A genetic code dictionary was employed to translate both the mutated gene sequence and a reference gene sequence into protein sequences. A translation function, translate_dna_to_protein, uti-lized this dictionary to convert both the reference and mutated gene sequences into pro-tein sequences.
 
-Protein stability prediction
+Protein Stability Prediction
 
 The wild-type (wt) structure, a component of the Bcl2-BINDI complex, was sourced from the Protein Data Bank as a crystal structure (PDB ID: 5JSN) with a resolution of 2.1 Å. Predictions for mutant forms of the Bcl-2 protein were generated using the SWISS-MODEL algorithm according to the protocol published elsewhere. To assess pro-tein stability, the standard Rosetta protocol was implemented, involving the calculation of the energy score (ES). This stability prediction method was executed by aligning root-mean-square-deviation (RMSD) values with Rosetta energy parameters. The differences in Rosetta energy scores for mutated forms (ΔES) were computed using the following equation:
 
