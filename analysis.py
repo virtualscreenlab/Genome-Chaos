@@ -71,7 +71,6 @@ sns.scatterplot(x='x', y='y', data=data, color='black', alpha=1)
 #kde = sns.kdeplot(x='x', y='y', data=data, fill=True, cmap='Reds', levels=3, alpha=1)
 sns.scatterplot(x='x', y='y', data=data, color='black', alpha=1, s=20, edgecolor='none')
 
-
 # Find the vertices of the triangle
 triangle_vertices = [(1.6, -220), (1.75, -220), (1.6, -230)]
 
@@ -109,7 +108,6 @@ data = pd.read_csv(file_path, sep='\s+', header=None, names=['x', 'y'])
 sns.scatterplot(x='x', y='y', data=data, color='black', alpha=1)
 #kde = sns.kdeplot(x='x', y='y', data=data, fill=True, cmap='Reds', levels=3, alpha=1)
 sns.scatterplot(x='x', y='y', data=data, color='black', alpha=1, s=20, edgecolor='none')
-
 
 # Find the vertices of the triangle
 triangle_vertices = [(1.6, -220), (1.75, -220), (1.6, -230)]
