@@ -1,7 +1,9 @@
 # Genome-Chaos
  Gene Mutation and Translation
 
-The BCL2 cDNA sequence (ENST00000398117.1) was retrieved from the COSMIC database. A Python script was utilized to simulate genetic mutations with the following parameters: a mutation rate of 10-4 and 60 cell divisions (Hayflick limit). The gene sequence was initialized as a list of characters, each representing a specific DNA sequence for the simulation. The apply_mutation function was used to randomly alter bases in the gene sequence according to the mutation rate. For each base, there was a probability of mutation, where the base could change to any nucleotide (A, T, C, or G). A genetic code dictionary was employed to translate both the mutated gene sequence and a reference gene sequence into protein sequences. A translation function, translate_dna_to_protein, uti-lized this dictionary to convert both the reference and mutated gene sequences into protein sequences.
+The wild-type BCL2 gene sequence (ENST00000398117.1) was retrieved from the COSMIC database. A Python script was utilized to simulate genetic mutations with the following parameters: a mutation rate of 10-5 and about 86 cell divisions. 
+The Python script simulates genetic mutations in a gene sequence using a Monte Carlo approach. The mutate_gene function introduces mutations based on a given muta-tion rate, altering nucleotides randomly. The main part of the script conducts a Monte Carlo simulation, repeatedly applying the mutation function to estimate the average number of iterations (divisions) required for a mutation to occur. After 1000 iterations, the average number of divisions was found to be 86.36.
+A genetic code dictionary was employed to translate both the mutated gene sequence and a reference gene sequence into protein sequences. A translation function, trans-late_dna_to_protein, utilized this dictionary to convert both the reference and mutated gene sequences into protein sequences.
 
 Protein Stability Prediction
 
