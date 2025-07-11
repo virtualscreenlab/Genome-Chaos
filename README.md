@@ -1,18 +1,96 @@
-# Genome-Chaos
- Gene Mutation and Translation
+# Genome-Chaos: Gene Mutation and Protein Stability Analysis
 
-The wild-type BCL2 gene sequence (ENST00000398117.1) was retrieved from the COSMIC database. A Python script was utilized to simulate genetic mutations with the following parameters: a mutation rate of 10-5 and about 86 cell divisions. 
-The Python script simulates genetic mutations in a gene sequence using a Monte Carlo approach. The mutate_gene function introduces mutations based on a given muta-tion rate, altering nucleotides randomly. The main part of the script conducts a Monte Carlo simulation, repeatedly applying the mutation function to estimate the average number of iterations (divisions) required for a mutation to occur. After 1000 iterations, the average number of divisions was found to be 86.36.
-A genetic code dictionary was employed to translate both the mutated gene sequence and a reference gene sequence into protein sequences. A translation function, trans-late_dna_to_protein, utilized this dictionary to convert both the reference and mutated gene sequences into protein sequences.
+## Overview  
+This repository contains tools for simulating gene mutations, predicting protein stability, and analyzing protein-protein interactions, with a focus on cancer-related genome instability. The project integrates bioinformatics and computational biology approaches to study the relationship between genetic mutations and protein function.
 
-Protein Stability Prediction
+## Features  
 
-The wild-type (wt) structure, a component of the Bcl2-BINDI complex, was sourced from the Protein Data Bank as a crystal structure (PDB ID: 5JSN) with a resolution of 2.1 Å. Predictions for mutant forms of the Bcl-2 protein were generated using the SWISS-MODEL algorithm according to the protocol published elsewhere. To assess protein stability, the standard Rosetta protocol was implemented, involving the calculation of the energy score (ES). This stability prediction method was executed by aligning root-mean-square-deviation (RMSD) values with Rosetta energy parameters. The differences in Rosetta energy scores for mutated forms (ΔES) were computed using the following equation:
+- **Gene Mutation Simulation**: Monte Carlo simulation of genetic mutations with configurable mutation rates  
+- **Protein Translation**: Conversion of nucleotide sequences to protein sequences using standard genetic code  
+- **Protein Stability Prediction**: Rosetta protocol implementation for energy score calculations  
+- **Protein-Protein Interaction Analysis**: Binding energy calculations for protein complexes  
+- **Genome Instability Analysis**: Tools for studying chaos in cancer cell populations  
 
-𝛥𝐸𝑆=𝐸𝑆𝑚𝑢𝑡−𝐸𝑆𝑤𝑡 
+## Installation  
 
-where ESmut and ESwt are the Rosetta energy score values for the wild type and mutated forms, respectively.
+### Prerequisites  
+- Python 3.7+  
+- Rosetta (for protein stability predictions)  
+- BioPython  
+- NumPy  
 
-Protein Function Prediction
+### Installation Steps  
+```bash  
+git clone https://github.com/yourusername/Genome-Chaos.git  
+cd Genome-Chaos  
+pip install -r requirements.txt  
+```  
 
-The crystal structure of Bcl-2 in association with a Bax BH3 peptide was retrieved from the Protein Data Bank (PDB ID: 2XA0) with a resolution of 2.7 Å to determine the Bcl2-Bax binding site. The molecular interaction between the protein and the peptide was evaluated utilizing the ZDOCK molecular docking server for the prediction of protein-protein complexes and symmetric multimers. The binding energy (Ebind) was calculated by using the PPI-affinity tool designed to predict and optimize the binding affinity of protein-peptide and protein-protein complexes.
+## Usage  
+
+### Gene Mutation Simulation  
+```python  
+from algorithm import simulate_mutations  
+
+# Simulate mutations with default parameters  
+results = simulate_mutations(gene_sequence, mutation_rate=1e-5, iterations=1000)  
+print(f"Average divisions until mutation: {results['average_divisions']}")  
+```  
+
+### Protein Translation  
+```python  
+from algorithm import translate_sequence  
+
+protein_sequence = translate_sequence(gene_sequence)  
+```  
+
+### Protein Stability Prediction  
+```bash  
+python analysis.py --pdb wildtype.pdb --mutations mut.dat  
+```  
+
+## File Structure  
+
+```
+Genome-Chaos/  
+├── algorithm.py          # Core mutation and translation algorithms  
+├── algorithm.ipynb       # Jupyter notebook with examples  
+├── analysis.py           # Protein stability analysis tools  
+├── models/               # Protein structure models  
+│   ├── model_01_bxE2_nn.tpdb  
+│   └── model_01_bxE2_wt.pdb  
+├── data/                 # Genetic and mutation data  
+│   ├── mut.dat  
+│   └── mt.dat  
+├── docs/                 # Documentation and research  
+│   └── RCL2_gene.html  
+└── README.md             # This file  
+```  
+
+## Research Background  
+
+This work investigates the relationship between genome instability in cancer cells and protein function. The methodology includes:  
+
+1. Retrieving wild-type gene sequences from COSMIC database  
+2. Simulating mutations with Monte Carlo methods  
+3. Predicting protein stability changes using Rosetta protocols  
+4. Analyzing protein-protein interactions with molecular clustering  
+
+Key equations:  
+- ΔES = ESmut - ESwt (Energy score difference)  
+- Binding energy calculations using PH-affinity tools  
+
+## Contributing  
+
+Contributions are welcome. Please fork the repository and submit pull requests. For major changes, please open an issue first to discuss proposed changes.  
+
+## License  
+
+This project is licensed under the MIT License - see the LICENSE file for details.  
+
+## References  
+
+1. COSMIC database (https://cancer.sanger.ac.uk/cosmic)  
+2. Protein Data Bank (https://www.rcsb.org/)  
+3. Rosetta Commons (https://www.rosettacommons.org/)  
+4. SWISS-MODEL algorithm for protein structure prediction
