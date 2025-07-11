@@ -1,4 +1,4 @@
-# Genome-Chaos: Gene Mutation and Protein Stability Analysis
+# Genome Chaos: Gene Mutation and Protein Stability Analysis
 
 ## Overview  
 This repository contains tools for simulating gene mutations, predicting protein stability, and analyzing protein-protein interactions, with a focus on cancer-related genome instability. The project integrates bioinformatics and computational biology approaches to study the relationship between genetic mutations and protein function.
